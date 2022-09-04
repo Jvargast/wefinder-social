@@ -21,7 +21,7 @@ const postCtrl = {
     createPost: async (req, res) => {
         try {
             const { content, images, video } = req.body;
-            /* if(images.length === 0)
+            /* if(images.length === 0 )
             return res.status(400).json({msg: "Por favor, agrega una foto!"}) */
 
             if(images.length !== 0) {
@@ -40,6 +40,19 @@ const postCtrl = {
             } else if (video !== '') {
                 const newPost = new Posts({
                     content, video, user: req.user._id
+                })
+                await newPost.save()
+    
+                res.json({
+                    msg: 'Created Post!',
+                    newPost: {
+                        ...newPost._doc,
+                        user: req.user
+                    }
+                })
+            } else {
+                const newPost = new Posts({
+                    content, images, user: req.user._id
                 })
                 await newPost.save()
     
@@ -88,6 +101,23 @@ const postCtrl = {
 
         } catch (err) {
             return res.status(500).json({msg: err.message})
+        }
+    },
+    getAllPosts: async(req, res) => {
+        try {
+            const postMessages = await Posts.find().sort('-createdAt')
+            .populate("user likes", "avatar username startupName followers")
+            .populate({
+                path: "comments",
+                populate: {
+                    path: "user likes",
+                    select: "-password"
+                }
+            })
+                    
+            res.status(200).json({postInit: postMessages});
+        } catch (error) {
+            res.status(404).json({ message: error.message });
         }
     },
     updatePost: async (req, res) => {

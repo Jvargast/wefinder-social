@@ -3,7 +3,7 @@ import StickyBox from "react-sticky-box";
 import {
   Body,
   Container,
-  Formulario,
+  FormularioLogin,
   Banner,
   Avatar,
   Title,
@@ -50,7 +50,7 @@ export default function LoginComponent() {
     <Container>
       <StickyBox>
         <Body>
-          <Formulario>
+          <FormularioLogin>
             <Banner>
               <Avatar>
               <img src={logoW} alt="logoW" style={{objectFit:"contain"}}/>
@@ -108,8 +108,7 @@ export default function LoginComponent() {
                     display: "flex",
                     justifyContent: "flex-start",
                     alignItems: "center",
-                    flexDirection: "column",
-                    marginTop:"50px"
+                    flexDirection: "column"
                   }}
                   onSubmit={handleSubmit}
                 >
@@ -152,7 +151,7 @@ export default function LoginComponent() {
                 </div>
               </>
             )}
-          </Formulario>
+          </FormularioLogin>
         </Body>
       </StickyBox>
     </Container>

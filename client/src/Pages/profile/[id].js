@@ -49,7 +49,7 @@ const Profile = () => {
           {saveTab ? (
             <Saved auth={auth} dispatch={dispatch} />
           ) : (
-            <Posts auth={auth} profile={profile} dispatch={dispatch} id={id} />
+            <Posts auth={auth} profile={profile} dispatch={dispatch} id={id} theme={theme}/>
           )}
         </>
       )}

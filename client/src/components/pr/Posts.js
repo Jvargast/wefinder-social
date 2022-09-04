@@ -5,7 +5,7 @@ import LoadMoreBtn from '../LoadMoreBtn'
 import { getDataAPI } from '../../utils/fetchData'
 import { PROFILE_TYPES } from '../../redux/actions/profileAction'
 
-const Posts = ({auth, id, dispatch, profile}) => {
+const Posts = ({auth, id, dispatch, profile, theme}) => {
     const [posts, setPosts] = useState([])
     const [result, setResult] = useState(9)
     const [page, setPage] = useState(0)
@@ -30,7 +30,7 @@ const Posts = ({auth, id, dispatch, profile}) => {
     }
 
     return (
-        <div style={{padding:"20px"}}>
+        <div style={{padding:"20px", borderTop:"1px solid rgb(174, 169, 169)"}}>
             <PostThumb posts={posts} result={result} />
 
             {

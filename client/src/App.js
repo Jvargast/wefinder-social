@@ -17,7 +17,7 @@ import PageRender from "./customRouter/PageRender";
 import PrivateRouter from "./customRouter/PrivateRouter";
 import Alert from "./components/Alert/Alert";
 import { refreshToken } from "./redux/actions/authAction";
-import { getPosts } from "./redux/actions/postAction";
+import { getAllPosts, getPosts } from "./redux/actions/postAction";
 import { getSuggestions } from "./redux/actions/suggestionsAction";
 import { getNotifies } from "./redux/actions/notifyAction";
 import SocketClient from './SocketClient'
@@ -69,6 +69,11 @@ function App() {
     
     dispatch({ type: GLOBALTYPES.PEER, payload: newPeer })
   },[dispatch])
+
+  useEffect(()=> {
+    dispatch(getAllPosts());
+  },[dispatch])
+
   
   return (
     <>

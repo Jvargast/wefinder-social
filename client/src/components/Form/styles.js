@@ -19,6 +19,13 @@ export const Formulario = styled.div`
   border-radius: 14px;
   height: 620px;
 `;
+export const FormularioLogin = styled.div`
+display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 14px;
+  height: 460px;
+`;
 
 export const Body = styled.div`
   display: flex;

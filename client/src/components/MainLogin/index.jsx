@@ -8,14 +8,15 @@ import {
   EmailIcon,
 } from '../Main/styles';
 import PostModalLogin from '../PostModalLogin';
-import logo from '../../assets/wefinderlogo.svg'
+import ProfilePage from '../ProfilePage';
+
 export default function MainLogin() {
   return (
     <Container>    
       <Header>
         <PostModalLogin/>
       </Header>
-      <img src={logo} alt="logo" style={{marginTop:"83px", background:"#AF4995"}}/>
+      <ProfilePage/>
       <BottomMenu>
         <HomeIcon className="active" />
         <SearchIcon />

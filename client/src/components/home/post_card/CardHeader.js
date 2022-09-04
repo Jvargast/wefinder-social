@@ -7,7 +7,7 @@ import { GLOBALTYPES } from '../../../redux/actions/globalTypes'
 import { deletePost } from '../../../redux/actions/postAction'
 import { BASE_URL } from '../../../utils/config'
 
-const CardHeader = ({post}) => {
+const CardHeader = ({post, theme}) => {
     const { auth, socket } = useSelector(state => state)
     const dispatch = useDispatch()
 
@@ -25,13 +25,13 @@ const CardHeader = ({post}) => {
     }
 
     const handleCopyLink = () => {
-        navigator.clipboard.writeText(`${BASE_URL}/post/${post._id}`)
+        navigator.clipboard.writeText(`${BASE_URL}post/${post._id}`)
     }
 
     return (
         <div className="card_header">
             <div className="d-flex">
-                <img src={post.user.avatar} alt="big-avatar" style={{width:"60px", borderRadius:"9999px", height:"60px"}} />
+                <img src={post.user.avatar} alt="big-avatar" style={{width:"60px", borderRadius:"9999px", height:"60px",filter: theme ? 'invert(1)' : 'invert(0)' }} />
 
                 <div className="card_name">
                     <h6 className="m-0">

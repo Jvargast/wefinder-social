@@ -8,8 +8,8 @@ import InputComment from './home/InputComment'
 
 const PostCard = ({post, theme}) => {
     return (
-        <div className="card my-3" style={{background:"#dcd8d8"}}> 
-            <CardHeader post={post} />
+        <div className="card my-3" style={{background:"rgb(255 255 255)", width:"100%"}}> 
+            <CardHeader post={post} theme={theme}/>
             <CardBody post={post} theme={theme} />
             <CardFooter post={post} />
 

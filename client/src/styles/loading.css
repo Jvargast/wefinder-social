@@ -61,11 +61,11 @@
     z-index: 99;
     color: crimson;
 }
-.loading{
+/* .loading{
     position: absolute;
     top: 60%;
     right: 35px;
     width: 15px;
     height: 15px;
     transform: translateY(-50%);
-}
+} */

@@ -1,6 +1,6 @@
 .status_modal{
     position: fixed;
-    top:0;
+    top:82px;
     left: 0;
     background: #0008;
     z-index: 4;
@@ -20,7 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid red;
     transform: translateY(-13px);
 } 
 .status_header span{

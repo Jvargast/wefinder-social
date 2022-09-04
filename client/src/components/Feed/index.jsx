@@ -1,21 +1,24 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-/* import Post from '../Post'; */
+import Post from '../Post'; 
 
 import { Container, Tab, Posts } from './styles';
 
 const Feed = () => {
+
+  const {homePosts} = useSelector((state)=>state);
 
 
   return (
     <Container>
       <Tab>Publicaciones</Tab>
       <Posts>
-      {/* loading
+      {homePosts.loading
         ? "Cargando Publicaciones...."
-        : posts.map((post:any, id:any) => {
-            return <Post data={post} key={id} loading={loading}/>;
-          }) */}
+        : homePosts.postInit.map((post, id) => {
+            return <Post data={post} key={id} loading={homePosts.loading}/>;
+          })}
       </Posts>
     </Container>
   );

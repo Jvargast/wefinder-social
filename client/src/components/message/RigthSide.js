@@ -145,23 +145,23 @@ const RightSide = () => {
 
     // Call
     const caller = ({video}) => {
-        const { _id, avatar, username, fullname } = user
+        const { _id, avatar, username, startupName } = user
 
         const msg = {
             sender: auth.user._id,
             recipient: _id, 
-            avatar, username, fullname, video
+            avatar, username, startupName, video
         }
         dispatch({ type: GLOBALTYPES.CALL, payload: msg })
     }
 
     const callUser = ({video}) => {
-        const { _id, avatar, username, fullname } = auth.user
+        const { _id, avatar, username, startupName } = auth.user
 
         const msg = {
             sender: _id,
             recipient: user._id, 
-            avatar, username, fullname, video
+            avatar, username, startupName, video
         }
 
         if(peer.open) msg.peerId = peer._id
@@ -187,10 +187,10 @@ const RightSide = () => {
                     <UserCard user={user}>
                         <div>
                             <i className="fas fa-phone-alt"
-                            onClick={handleAudioCall} />
+                            onClick={handleAudioCall} style={{marginRight:"4px"}} />
 
-                            <i className="fas fa-video mx-3"
-                            onClick={handleVideoCall} />
+                            {/* <i className="fas fa-video mx-3"
+                            onClick={handleVideoCall} /> */}
 
                             <i className="fas fa-trash text-danger"
                             onClick={handleDeleteConversation} />

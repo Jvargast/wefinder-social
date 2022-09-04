@@ -15,6 +15,7 @@ export const Tab = styled.div`
   color: var(--white);
   border-bottom: 2px solid var(--wefinder);
   background: rgb(78,67,143);
+  margin-top: 84px;
   background: linear-gradient(90deg, rgba(78,67,143,1) 17%, rgba(87,75,147,1) 43%, rgba(122,105,161,1) 77%);
   &:hover {
     

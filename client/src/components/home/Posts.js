@@ -24,7 +24,6 @@ const Posts = () => {
 
         setLoad(false)
     }
-
     return (
         <div className="posts">
             {

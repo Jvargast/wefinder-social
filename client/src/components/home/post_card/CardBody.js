@@ -28,7 +28,7 @@ const CardBody = ({post, theme}) => {
 
             </div>
             {
-                post.images.length > 0 ? <Carousel images={post.images} id={post._id} />: <ReactPlayer width={"100%"} url={post.video} style={{filter: theme ? 'invert(1)' : 'invert(0)'}}/>
+                post.images.length > 0 ? <Carousel images={post.images} id={post._id} />: post.video ?<ReactPlayer width={"100%"} url={post.video} style={{filter: theme ? 'invert(1)' : 'invert(0)'}}/> : null
             }
         </div>
     )

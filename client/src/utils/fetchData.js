@@ -7,6 +7,11 @@ export const getDataAPI = async (url, token) => {
     return res;
 }
 
+export const fetchData = async(url) => {
+    const res= await axios.get(`/api/${url}`)
+    return res;
+}
+
 export const getStory = async(url) => {
     const res= await axios.get(`api/${url}`)
     return res;

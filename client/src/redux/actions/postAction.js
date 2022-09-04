@@ -1,6 +1,6 @@
 import { GLOBALTYPES } from './globalTypes'
 import { imageUpload } from '../../utils/imageUpload'
-import { postDataAPI, getDataAPI, patchDataAPI, deleteDataAPI } from '../../utils/fetchData'
+import { postDataAPI, getDataAPI, patchDataAPI, deleteDataAPI, fetchData } from '../../utils/fetchData'
 import { createNotify, removeNotify } from './notifyAction'
 
 export const POST_TYPES = {
@@ -9,7 +9,8 @@ export const POST_TYPES = {
     GET_POSTS: 'GET_POSTS',
     UPDATE_POST: 'UPDATE_POST',
     GET_POST: 'GET_POST',
-    DELETE_POST: 'DELETE_POST'
+    DELETE_POST: 'DELETE_POST',
+    FETCH_ALL:'FETCH_ALL'
 }
 
 
@@ -67,6 +68,16 @@ export const getPosts = (token) => async (dispatch) => {
             payload: {error: err.response.data.msg}
         })
     }
+}
+
+export const getAllPosts = () => async(dispatch) => {
+    try {
+        const { data } = await fetchData('getPosts');
+    
+        dispatch({ type: POST_TYPES.FETCH_ALL, payload: data });
+      } catch (error) {
+        console.log(error.message);
+      }
 }
 
 export const updatePost = ({content, images, auth, status, video}) => async (dispatch) => {

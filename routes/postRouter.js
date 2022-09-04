@@ -6,6 +6,8 @@ router.route('/posts')
     .post(auth, postCtrl.createPost)
     .get(auth, postCtrl.getPosts)
 
+router.route('/getPosts').get(postCtrl.getAllPosts)
+
 router.route('/post/:id')
     .patch(auth, postCtrl.updatePost)
     .get(auth, postCtrl.getPost)
