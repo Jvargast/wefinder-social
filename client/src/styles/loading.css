@@ -1,0 +1,71 @@
+.App {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--white);
+  }
+  
+  .main {
+    width: 100%;
+    min-height: 100vh;
+    margin: auto;
+  }
+
+
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading svg{
+    font-size: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    animation: text 1s ease-in-out infinite;
+}
+#theme {
+    display: none;
+  }
+  #theme:checked ~ * {
+    filter: invert(1);
+  }
+
+@keyframes text{
+    50%{ opacity: 0.1 }
+}
+.loading polygon{
+    stroke-dasharray: 22;
+    stroke-dashoffset: 1;
+    animation: dash 4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 
+    infinite alternate-reverse;
+}
+@keyframes dash{
+    to {stroke-dashoffset: 234;}
+}
+
+.users{position: absolute;
+    width: 100%;
+    min-width: 250px;
+    background: #fafafa;
+    max-height: calc(100vh - 150px);
+    overflow: auto;
+    /* margin-top: 3px; */
+}
+.close_search {
+    position: absolute;
+    top: 82px;
+    right: -22px;
+    cursor: pointer;
+    font-weight: 900;
+    z-index: 99;
+    color: crimson;
+}
+.loading{
+    position: absolute;
+    top: 60%;
+    right: 35px;
+    width: 15px;
+    height: 15px;
+    transform: translateY(-50%);
+}
