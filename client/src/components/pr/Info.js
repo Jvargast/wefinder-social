@@ -67,7 +67,7 @@ const Info = ({ id, auth, profile, dispatch, theme }) => {
             </div>
 
             <h6 style={{display:"flex"}}>
-              <span style={{fontWeight:"bold"}}>Nombre startup: </span> {user.startupName}
+            <span style={{fontWeight:"bold"}}>Nombre startup:</span> <span style={{fontWeight:"bold", color:"purple", marginLeft:"5px"}}> {user.startupName}</span> 
               <span style={{fontWeight:"bold", marginLeft:"5px"}}>Teléfono: +569 </span>{user.mobile}
             </h6>
             <p className="m-0"><span style={{fontWeight:"bold"}}>Cargo: </span>{user.occupation}</p>
