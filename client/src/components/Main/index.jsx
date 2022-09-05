@@ -19,12 +19,12 @@ export default function Main() {
         <PostModal/>
       </Header>
       {/* <ProfilePage /> */}
-      <BottomMenu>
+      {/* <BottomMenu>
         <HomeIcon className="active" />
         <SearchIcon />
         <BellIcon />
         <EmailIcon />
-      </BottomMenu>
+      </BottomMenu> */}
     </Container>
   )
 }

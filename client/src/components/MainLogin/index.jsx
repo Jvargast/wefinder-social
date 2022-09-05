@@ -17,12 +17,12 @@ export default function MainLogin() {
         <PostModalLogin/>
       </Header>
       <ProfilePage/>
-      <BottomMenu>
+      {/* <BottomMenu>
         <HomeIcon className="active" />
         <SearchIcon />
         <BellIcon />
         <EmailIcon />
-      </BottomMenu>
+      </BottomMenu> */}
     </Container>
   )
 }

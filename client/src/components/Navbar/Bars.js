@@ -16,11 +16,11 @@ const Nav = styled.nav`
   z-index: 100;
   position: fixed;
   bottom: 10%;
-  width: 456px;
-  margin-left: -228px;
+  width: 356px;
+  margin-left: -177px;
   background: white;
   left: 50%;
-  padding: 0 2em;
+  /* padding: 0 2em; */
   border-radius: 20px;
   box-shadow: rgb(50 50 93 / 25%) 0 50px 100px -20px,
     rgb(0 0 0 /30%) 0 30px 60px -30px;
@@ -42,7 +42,7 @@ const LinkStyled = styled(Link)`
   flex-direction: column;
   padding: 1em;
   line-height: 1.4;
-  width: 80px;
+  width: 60px;
   transition: all 0.3s ease-out;
   span {
     color: black;
